@@ -6,76 +6,137 @@
 using namespace std;
 int main()
 {
+    int n;
+    int num[4] = {0};
+    cin >> n;
+    num[0] = n / 1000;
+    num[1] = n / 100 % 10;
+    num[2] = n / 10 % 10;
+    num[3] = n % 10;
 
-    string LED_NUM[10][5];
-
-    LED_NUM[0][0] = "*****";
-    LED_NUM[0][1] = "*   *";
-    LED_NUM[0][2] = "*   *";
-    LED_NUM[0][3] = "*   *";
-    LED_NUM[0][4] = "*****";
-
-    //1
-    LED_NUM[1][0] = "    *";
-    LED_NUM[1][1] = "    *";
-    LED_NUM[1][2] = "    *";
-    LED_NUM[1][3] = "    *";
-    LED_NUM[1][4] = "    *";
-
-    LED_NUM[2][0] = "*****";
-    LED_NUM[2][1] = "    *";
-    LED_NUM[2][2] = "*****";
-    LED_NUM[2][3] = "*    ";
-    LED_NUM[2][4] = "*****";
-
-    LED_NUM[3][0] = "*****";
-    LED_NUM[3][1] = "    *";
-    LED_NUM[3][2] = "*****";
-    LED_NUM[3][3] = "    *";
-    LED_NUM[3][4] = "*****";
-
-    LED_NUM[4][0] = "*   *";
-    LED_NUM[4][1] = "*   *";
-    LED_NUM[4][2] = "*****";
-    LED_NUM[4][3] = "    *";
-    LED_NUM[4][4] = "    *";
-
-    LED_NUM[5][0] = "*****";
-    LED_NUM[5][1] = "*    ";
-    LED_NUM[5][2] = "*****";
-    LED_NUM[5][3] = "    *";
-    LED_NUM[5][4] = "*****";
-
-    LED_NUM[6][0] = "*****";
-    LED_NUM[6][1] = "*    ";
-    LED_NUM[6][2] = "*****";
-    LED_NUM[6][3] = "*   *";
-    LED_NUM[6][4] = "*****";
-
-    LED_NUM[7][0] = "*****";
-    LED_NUM[7][1] = "    *";
-    LED_NUM[7][2] = "    *";
-    LED_NUM[7][3] = "    *";
-    LED_NUM[7][4] = "    *";
-
-    LED_NUM[8][0] = "*****";
-    LED_NUM[8][1] = "*   *";
-    LED_NUM[8][2] = "*****";
-    LED_NUM[8][3] = "*   *";
-    LED_NUM[8][4] = "*****";
-
-    LED_NUM[9][0] = "*****";
-    LED_NUM[9][1] = "*   *";
-    LED_NUM[9][2] = "*****";
-    LED_NUM[9][3] = "    *";
-    LED_NUM[9][4] = "    *";
-
-
-    string n;
-    for(int i = 0 ; i< 4 ; i++){
-        cin >> n[i];
-        
+    //1 row
+    for (int i = 0; i < 4; i++)
+    {
+        switch (num[i])
+        {
+        case 1:
+            cout << "    *"
+                 << " ";
+            break;
+        case 4:
+            cout << "*   *";
+            break;
+        default:
+            cout << "*****"
+                 << " ";
+            break;
+        }
     }
+    cout << endl;
 
+    // 2 row
+    for (int i = 0; i < 4; i++)
+    {
+        switch (num[i])
+        {
+        case 1:
+        case 2:
+        case 3:
+        case 7:
+            cout << "    *"
+                 << " ";
+            break;
+        case 0:
+        case 4:
+        case 8:
+        case 9:
+            cout << "*   *"
+                 << " ";
+            break;
+        case 5:
+        case 6:
+            cout << "*    "
+                 << " ";
+            break;
+        }
+    }
+    cout << endl;
+
+    // 3 row
+    for (int i = 0; i < 4; i++)
+    {
+        switch (num[i])
+        {
+        case 0:
+            cout << "*   *"
+                 << " ";
+            break;
+        case 1:
+        case 7:
+            cout << "    *"
+                 << " ";
+            break;
+        default:
+            cout << "*****"
+                 << " ";
+        }
+    }
+    cout << endl;
+
+    // 4 row
+    for (int i = 0; i < 4; i++)
+    {
+        switch (num[i])
+        {
+        case 0:
+        case 8:
+            cout << "*   *"
+                 << " ";
+            break;
+        case 1:
+        case 7:
+        case 9:
+            cout << "    *"
+                 << " ";
+            break;
+        case 2:
+            cout << "*    "
+                 << " ";
+            break;
+        case 3:
+        case 4:
+        case 5:
+            cout << "    *"
+                 << " ";
+            break;
+        case 6:
+            cout << "*   *"
+                 << " ";
+        }
+    }
+    cout << endl;
+
+    // 5 row
+    for (int i = 0; i < 4; i++)
+    {
+        switch (num[i])
+        {
+        case 1:
+            cout << "    *"
+                 << " ";
+            break;
+        case 4:
+        case 7:
+        case 9:
+            cout << "    *"
+                 << " ";
+            break;
+        default:
+            cout << "*****"
+                 << " ";
+            break;
+        }
+    }
+    cout << endl;
     return 0;
 }
